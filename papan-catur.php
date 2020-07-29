@@ -1,31 +1,29 @@
 <?php
 
 function papan_catur($angka) {
-// tulis kode di sini
-$text1 ='';
-//jum;aj kotak
-$jumlah="";
-//membuat tag table
-$text1 .='<table border=1>';
+	for ($i=0; $i <$angka ; $i++) { 
 
-for ($n=0; $n < 4; $n++) { 
-	$text1.='<tr>';
-	for ($m=0; $m < 4; $m++) { 
-		# warna...
-		$warna='';
-		if (($n % 2 == 0 && $m % 2 == 0)||($n % 2 == 0 && $m % 2 ==1 )) {
-			$warna='#000';
+		for ($j=0; $j <($angka*2)-1; $j++) { 
+
+			if ($j%2== 1 && $i%2== 1) {
+				echo "#&nbsp";
+				# code...
+
+			}elseif ($j%2== 0 && $i%2==0) {
+				echo "#&nbsp";
+				# code...
+			}else{
+				echo "#&nbsp";
+			}
 			# code...
-		}else $warna='#fff';
-		$text1 .='<td width=30 height=30 bgcolor='.$warna.'></td>';
+		}
+		echo "<br>";
 	}
-	$text1 .='</tr>';
-}
-$text1.='</table>';
 }
 
+  
 // TEST CASES
-echo papan_catur(4); 
+echo papan_catur(4)."<br>"; 
 /*
 # # # #
  # # #
@@ -33,7 +31,7 @@ echo papan_catur(4);
  # # #
  */
 
-echo papan_catur(8);
+echo papan_catur(8)."<br><br>";
 /* 
 # # # # # # # #
  # # # # # # # 
